@@ -4,6 +4,7 @@ import ConversationListModal from "./conversationListModal.js";
 class ConversationList {
     $btnCreateConversation;
     $btnFindConversation;
+    $btnRule;
 
     createConversationModal;
     conversationListModal;
@@ -21,6 +22,11 @@ class ConversationList {
         this.$btnFindConversation.innerHTML = "Tìm phòng";
         this.$btnFindConversation.classList.add("btn", "btn-primary", "m-b-md");
         this.$btnFindConversation.addEventListener("click", this.openConversationListModal);
+
+        this.$btnRule = document.createElement("button");
+        this.$btnRule.innerHTML = "Luật chơi";
+        this.$btnRule.classList.add("btn", "btn-primary", "m-b-md");
+        this.$btnRule.addEventListener("click", () => {});
 
         this.conversationList = [];
 
@@ -44,6 +50,7 @@ class ConversationList {
         div.classList.add("d-flex", "flex-column", "centering");
         div.appendChild(this.$btnCreateConversation);
         div.appendChild(this.$btnFindConversation);
+        div.appendChild(this.$btnRule);
 
         flexContainer.appendChild(div);
         this.createConversationModal.initRender(flexContainer);
