@@ -78,11 +78,11 @@ class CreateConversationModal {
 
     initRender = (container) => {
         const flexContainer = document.createElement("div");
-        flexContainer.classList.add("d-flex", "flex-column", "centering", "item");
-        flexContainer.style.backgroundColor = "white";
+        flexContainer.classList.add("d-flex", "flex-column", "centering", "item", "border-radius");
         flexContainer.style.width = "500px";
         flexContainer.style.height = "250px";
         flexContainer.style.backgroundColor = "rgb(161, 213, 243)";
+
 
 
         const title = document.createElement("h2");

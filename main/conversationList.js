@@ -1,5 +1,6 @@
 import CreateConversationModal from "./createConversationModal.js";
 import ConversationListModal from "./conversationListModal.js";
+import Rule from "./rule.js";
 
 class ConversationList {
     $btnCreateConversation;
@@ -26,13 +27,18 @@ class ConversationList {
         this.$btnRule = document.createElement("button");
         this.$btnRule.innerHTML = "Luật chơi";
         this.$btnRule.classList.add("btn", "btn-primary", "m-b-md");
-        this.$btnRule.addEventListener("click", () => {});
+        this.$btnRule.addEventListener("click", this.openRuleScreen);
 
         this.conversationList = [];
 
         this.createConversationModal = new CreateConversationModal();
         this.conversationListModal = new ConversationListModal();
+        this.rule = new Rule();
 
+    }
+
+    openRuleScreen = () => {
+        this.rule.setVisible(true);
     }
 
     openConversationListModal = () => {
@@ -55,6 +61,7 @@ class ConversationList {
         flexContainer.appendChild(div);
         this.createConversationModal.initRender(flexContainer);
         this.conversationListModal.initRender(flexContainer);
+        this.rule.initRender(flexContainer);
 
         container.appendChild(flexContainer);
     }

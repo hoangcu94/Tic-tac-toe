@@ -1,15 +1,20 @@
 import ConversationList from "./main/conversationList.js";
+// import GameScreen from "./gameScreen.js";
 class Main {
     conversationList;
+    gameScreen;
 
     constructor() {
-        this.conversationList = new ConversationList()
+        this.conversationList = new ConversationList();
+
+        // this.gameScreen = new GameScreen();
     }
 
     initRender = (container) => {
         const flexContainer = document.createElement("div");
-        flexContainer.classList.add("vh100", "vw100", "d-flex", "flex-column",'main-bg' )
-        
+
+        const div = document.createElement("div");
+        div.classList.add("vh100", "vw100", "d-flex", "flex-column",'main-bg' )
         const div1 = document.createElement("div");
         div1.classList.add( "d-flex",'flex-end', "align-center");
         const span = document.createElement("span");
@@ -34,11 +39,12 @@ class Main {
         div2.classList.add("grow-1", "d-flex", "centering");
         this.conversationList.initRender(div2);
 
+        div.appendChild(div1);
+        div.appendChild(title);
+        div.appendChild(div2);
 
-
-        flexContainer.appendChild(div1);
-        flexContainer.appendChild(title);
-        flexContainer.appendChild(div2);
+        flexContainer.appendChild(div);
+        // this.gameScreen.initRender(flexContainer);
         container.appendChild(flexContainer);
     }
 }

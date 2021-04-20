@@ -67,7 +67,7 @@ class ConversationListModal {
 
     initRender = (container) => {
         const flexContainer = document.createElement("div");
-        flexContainer.classList.add("item","d-flex", "flex-column");
+        flexContainer.classList.add("item","d-flex", "flex-column", "border-radius");
         flexContainer.style.width = "680px";
         flexContainer.style.backgroundColor = "rgb(218, 205, 205)";
 
